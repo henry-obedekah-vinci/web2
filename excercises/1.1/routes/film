@@ -1,0 +1,36 @@
+var express = require('express');
+var router = express.Router();
+
+
+const films = [
+    {
+        id: 1,
+        title: 'Gardien de la galaxie 3',
+        duration: 149 ,
+        budget: 250 , 
+        link :'https://fr.disney.be/films/les-gardiens-de-la-galaxie-volume-3' , 
+      },
+
+      {
+        id: 2,
+        title: 'Home Alone 3',
+        duration: 102 ,
+        budget: 32 , 
+        link :'https://www.disneyplus.com/nl-nl/movies/home-alone-3/5iC8Hb3jcEoo' , 
+      },
+      {
+        id: 3,
+        title: 'Black Panther',
+        duration: 135 ,
+        budget: 200 , 
+        link :'https://fr.disney.be/films/black-panther' , 
+      },
+
+]
+
+
+router.get('/', function(req, res, next) {
+   return res.json(films); 
+  });
+
+module.exports = router;
