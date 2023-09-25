@@ -1,0 +1,21 @@
+@baseUrl = http://localhost:3000 
+
+###Create a film
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+     "title": "Gardien de la galaxie 4",
+        "duration": "149" ,
+        "budget": "250" , 
+        "link" : "https://fr.disney.be/films/les-gardiens-de-la-galaxie-volume-3 ", 
+
+}
+
+### GET all
+GET {{baseUrl}}/films
+Content-Type: application/json
+
+### GET minimum 
+GET {{baseUrl}}/films?minimum-duration=80
+Content-Type: application/json
