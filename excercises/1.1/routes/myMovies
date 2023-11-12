@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 
-const films = [
+const FILM = [
     {
         id: 1,
         title: 'Gardien de la galaxie 3',
@@ -30,7 +30,7 @@ const films = [
 
 
 router.get('/', function(req, res, next) {
-   return res.json(films); 
+   return res.json(FILM); 
   });
 
 module.exports = router;
