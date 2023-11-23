@@ -18,6 +18,7 @@ const FILM = [
         budget: 32 , 
         link :'https://www.disneyplus.com/nl-nl/movies/home-alone-3/5iC8Hb3jcEoo' , 
       },
+
       {
         id: 3,
         title: 'Black Panther',
@@ -30,6 +31,7 @@ const FILM = [
 
 
 router.get('/', function(req, res, next) {
+  console.log('GET /myMovies')
    return res.json(FILM); 
   });
 
