@@ -58,7 +58,14 @@ router.get('/:id', (req, res) => {
 });
   
 
+// Read a film from its id in the menu
+router.get('/:id', (req, res) => {
+  const indexOfFilmFound = films.findIndex((film) => film.id == req.params.id);
 
+  if (indexOfFilmFound < 0) return res.json('Resource not found'); // bad practise (will be improved in exercise 1.5)
+
+  return res.json(films[indexOfFilmFound]);
+});
 
 router.post('/' , function(req,res){
   const title =
@@ -87,17 +94,6 @@ FILM.push(newFilm);
 return res.json(newFilm);
 })
 
-routeur.delete ('/:id', function (req,res ){
-  console.log(`DELETE/films/${req.params.id}`);
 
-   const foundIndex = FILM.findIndex(fims =>  fims.id == req.params.id); 
-   if (foundIndex < 0) {
-    return res.sendStatus(400); 
-
-    const itemsRemovedFromFilm = FILM.splice(foundIndex, 1 ); 
-    const itemRemoved = itemsRemovedFromFilm[0]; 
-    res.json(itemRemoved); 
-   }
-})
 
 module.exports = router;
