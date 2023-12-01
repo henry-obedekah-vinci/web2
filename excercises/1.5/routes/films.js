@@ -58,14 +58,7 @@ router.get('/:id', (req, res) => {
 });
   
 
-// Read a film from its id in the menu
-router.get('/:id', (req, res) => {
-  const indexOfFilmFound = films.findIndex((film) => film.id == req.params.id);
 
-  if (indexOfFilmFound < 0) return res.json('Resource not found'); // bad practise (will be improved in exercise 1.5)
-
-  return res.json(films[indexOfFilmFound]);
-});
 
 router.post('/' , function(req,res){
   const title =
